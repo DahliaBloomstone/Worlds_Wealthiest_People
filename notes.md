@@ -40,3 +40,19 @@ LOOK UP HEREDOC RUBY
 
 TO RUN IN TERMINAL:
 ./bin/Worlds-Wealthiest-People
+
+
+
+What is a wealthy person?
+a wealthy person has a name
+a wealthy person has a ranking
+a wealthy person has a description 
+
+want an object that has these properties that the CLI can just use
+
+cli.rb 
+@person = WorldsWealthiestPeople::Person.list 
+Want to have a class method called list 
+That returns to me a whole bunch of people 
+Some sort of object called Person, that has class method list, that
+should return these @people 

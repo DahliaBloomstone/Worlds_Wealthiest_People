@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby 
 
-require './lib/Worlds_Wealthiest_People'
+require "bundler/setup"
+require "Worlds_Wealthiest_People"
 
 WorldsWealthiestPeople::CLI.new.call 
+

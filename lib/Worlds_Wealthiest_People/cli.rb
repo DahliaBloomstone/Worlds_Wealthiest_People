@@ -8,17 +8,8 @@ class WorldsWealthiestPeople::CLI
 end
 
 def list_billionaires 
-puts <<-DOC
-  1. 50. Laurene Powell Jobs
-The first woman on our list is the creator of the Emerson Collective, and the widow of Steve Jobs.
-She also created the Lauren Powell Jobs trust, which is currently the largest individual shareholder in Disney.
-She has given millions to charity including a $50 million commitment to "XQ: The Super School Project.
-As of 2018, her net worth stood somewhere in the region of $18.8 Billion.
-2. 49. Elon Musk
-Working to revolutionize transportation both on Earth and in space, Elon Musk is the owner of car company Tesla Motors, and rocket company Space X.
-He grew up in South Africa, then immigrated to Canada at age 17, landing in the US as a transfer student at the University of Pennsylvania.
-As of 2018, his net worth stood somewhere in the region of $19.9 Billion.
-DOC
+puts "Today's billionaire list:"
+@person = WorldsWealthiestPeople::Person.list
 end 
 
 def menu 
