@@ -9,8 +9,8 @@ end
 
 def list_billionaires 
 puts "Today's Billionaire List:"
-@person = WorldsWealthiestPeople::Person.list
-@person.each.with_index(1) do |person, i| 
+@people = WorldsWealthiestPeople::Person.list
+@people.each.with_index(1) do |person, i| 
   puts "#{i}. #{person.name} - #{person.ranking} - #{person.description}"
 end 
 end 
@@ -22,7 +22,8 @@ def menu
   input = gets.strip.downcase
  
   if input.to_i > 0 
-    puts @person[input.to_i-1]
+    the_person = @people[input.to_i-1]
+     puts "#{i}. #{the_person.name} - #{the_person.ranking} - #{the_person.description}"
     elsif input == "list"
     list_billionaires 
      else 
