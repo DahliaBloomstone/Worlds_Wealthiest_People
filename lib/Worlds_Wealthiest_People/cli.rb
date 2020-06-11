@@ -1,15 +1,6 @@
-#require "Worlds_Wealthiest_People/cli/version"
-
-#module WorldsWealthiestPeople
-#  module Cli
- #   class Error < StandardError; end
-    # Your code goes here...
-#  end
-#end
-
-class WorldsWealthiestPeople::Cli
+class WorldsWealthiestPeople::CLI
   
   def call 
-    puts "These are the world's wealthiest people"
+    puts "These are the World's Wealthiest People!"
 end
 end 
