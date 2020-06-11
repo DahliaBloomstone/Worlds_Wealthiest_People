@@ -34,3 +34,9 @@ class WorldsWealthiestPeople::Cli'
 
 
 BIN FILE: Loading interpreter, environment 
+
+LOOK UP HEREDOC RUBY
+
+
+TO RUN IN TERMINAL:
+./bin/Worlds-Wealthiest-People
