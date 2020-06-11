@@ -33,6 +33,6 @@ def menu
   end 
 
 def goodbye 
-  puts "See you tomorrow for more information!"
+  puts "See you tomorrow to keep reading!"
   end 
 end 
