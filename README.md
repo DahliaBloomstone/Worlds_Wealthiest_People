@@ -1,6 +1,11 @@
+Welcome to World's Wealthiest People! 
+This CLI will return to you a list of the 2019 World's Wealthiest People in Order from least to greatest!
+It will also give you a description of all of the World's Wealthiest People!
+Have fun learning!
+
 # WorldsWealthiestPeople::Cli
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/Worlds_Wealthiest_People/cli`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/Worlds_Wealthiest_People/cli`. To experiment with that code, run './bin/Worlds-Wealthiest-People' for an interactive prompt.
 
 TODO: Delete this and the text above, and describe your gem
 

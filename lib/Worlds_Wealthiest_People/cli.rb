@@ -8,22 +8,22 @@ class WorldsWealthiestPeople::CLI
 end
 
 def list_billionaires 
-puts "Today's Billionaire List:"
+puts "2019 Billionaire List in order:"
 @people = WorldsWealthiestPeople::Person.list
 @people.each.with_index(1) do |person, i| 
-  puts "#{i}. #{person.name} - #{person.ranking} - #{person.description}"
-end 
+  puts "#{i}. #{person.name_and_ranking} - #{person.description}"
+  end 
 end 
 
 def menu
    input = nil
      while input != "exit"
-  puts "Enter the number of the billionaire you'd like more info on or type exit to enter or type list to see the full list of billionaires again or type exit:"
+  puts "Continue to see the list of billionaires for 2019 with ranking, name, and description or type exit to enter or type list to see the full list of billionaires again or type exit:"
   input = gets.strip.downcase
  
   if input.to_i > 0 
     the_person = @people[input.to_i-1]
-     puts "#{i}. #{the_person.name} - #{the_person.ranking} - #{the_person.description}"
+     puts "#{i}. #{the_person.name_and_ranking} - #{the_person.description}"
     elsif input == "list"
     list_billionaires 
      else 
