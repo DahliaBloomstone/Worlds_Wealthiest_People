@@ -8,7 +8,7 @@ class WorldsWealthiestPeople::CLI
 end
 
 def list_billionaires 
-puts "2019 Billionaire List in order:"
+puts "2019 Billionaire List in order from least to greatest:"
 @people = WorldsWealthiestPeople::Person.list
 @people.each.with_index(1) do |person, i| 
   puts "#{i}. #{person.name_and_ranking} - #{person.description}"
