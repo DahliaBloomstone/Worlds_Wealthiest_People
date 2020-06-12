@@ -1,4 +1,4 @@
-#  ./bin/Worlds-Wealthiest-People
+#To Play:  ./bin/Worlds-Wealthiest-People
 class WorldsWealthiestPeople::CLI
   
   def call 
@@ -11,7 +11,7 @@ end
 
 def list_billionaires
 puts ""
-puts "2019 Billionaire List in order from least to greatest:"
+puts "2019 Billionaire List in Order from Least to Greatest:"
 @people = WorldsWealthiestPeople::Person.list
 @people.each.with_index(1) do |person, i| 
   puts "#{i}. #{person.name_and_ranking}"
@@ -41,13 +41,13 @@ def menu
     list_billionaires 
      else 
        puts ""
-        puts "Not sure what you want, type list or exit"
+        puts "Not sure what you want, type list, rankings, or exit"
       end 
     end
   end 
 
 def goodbye 
   puts ""
-  puts "See you tomorrow to keep reading!"
+  puts "See you tomorrow to keep learning!"
   end 
 end 
