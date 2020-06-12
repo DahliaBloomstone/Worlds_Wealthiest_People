@@ -1,3 +1,4 @@
+#     ./bin/Worlds-Wealthiest-People
 class WorldsWealthiestPeople::CLI
   
   def call 

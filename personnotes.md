@@ -26,4 +26,10 @@ person_2.url = "https://vocal.media/geeks/top-50-billionaires-in-the-world-for-2
   
   
   #end up with an array of people I just scraped 
+  
+   
+  #go to website, find the people
+  #extract the properties
+  #instantiate a person 
+
 

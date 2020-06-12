@@ -12,11 +12,6 @@ def self.scrape_people
   people = [] 
   
   people << self.scrape_url
-  
-  #go to website, find the people
-  #extract the properties
-  #instantiate a person 
-
     people
   end 
   
