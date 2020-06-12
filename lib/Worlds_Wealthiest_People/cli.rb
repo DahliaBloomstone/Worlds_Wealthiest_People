@@ -29,7 +29,7 @@ def menu
    input = nil
      while input != "exit"
   puts ""
-  puts "Continue to see the list of billionaires for 2019 with ranking, name, and description or type exit to enter or type list to see the full list of billionaires again or type exit:"
+  puts "Continue to see the list of billionaires for 2019 with ranking, name, and description or type exit to enter. Type list to read about the full descriptions of billionaires again, type rankings to see just the billionaires and their rankings, or type exit:"
   input = gets.strip.downcase
  
   if input.to_i > 0 
