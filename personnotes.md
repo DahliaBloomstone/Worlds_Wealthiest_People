@@ -32,4 +32,12 @@ person_2.url = "https://vocal.media/geeks/top-50-billionaires-in-the-world-for-2
   #extract the properties
   #instantiate a person 
 
+def list_descriptions 
+  puts ""
+  puts "2019 Billionaire List descriptions:"
+  @people = WorldsWealthiestPeople::Person.list 
+  @people.each.with_index(1) do |person, i| 
+  puts "#{i}. #{the_person.descriptions}"
+end
+end 
 

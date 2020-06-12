@@ -87,3 +87,60 @@ def goodbye
   puts "See you tomorrow to keep reading!"
   end 
 end 
+
+
+TRIED: class WorldsWealthiestPeople::CLI
+  
+  def call 
+    puts "These are theWorld's Wealthiest People!"
+    list_billionaires
+    list_descriptions
+    menu 
+    goodbye 
+end
+
+def list_billionaires
+puts ""
+puts "2019 Billionaire List in order from least to greatest:"
+@people = WorldsWealthiestPeople::Person.list
+@people.each.with_index(1) do |person, i| 
+  puts "#{i}. #{person.name_and_ranking}"
+  end 
+end 
+
+def list_descriptions 
+  puts ""
+  puts "2019 Billionaire List descriptions:"
+  @people = WorldsWealthiestPeople::Person.descriptions 
+  @people.each.with_index(1) do |person, i| 
+  @people.map{|person| puts person.descriptions}
+  puts "#{i}. #{the_person.descriptions}"
+  end
+end 
+
+  
+def menu
+   input = nil
+     while input != "exit"
+  puts ""
+  puts "Continue to see the list of billionaires for 2019 with ranking, name, and description or type exit to enter or type list to see the full list of billionaires again or type exit:"
+  input = gets.strip.downcase
+ 
+     if input.to_i > 0 
+    the_person = @people[input.to_i-1]
+   elsif input == "list"
+    list_billionaires 
+     elseif input == "descriptions"
+       list_descriptions
+     else 
+       puts ""
+        puts "Not sure what you want, type list or exit"
+      end 
+    end
+  end 
+
+def goodbye 
+  puts ""
+  puts "See you tomorrow to keep reading!"
+  end 
+end 

@@ -1,9 +1,10 @@
-#     ./bin/Worlds-Wealthiest-People
+#  ./bin/Worlds-Wealthiest-People
 class WorldsWealthiestPeople::CLI
   
   def call 
     puts "These are the World's Wealthiest People!"
     list_billionaires
+    list_descriptions
     menu 
     goodbye 
 end
@@ -13,8 +14,15 @@ puts ""
 puts "2019 Billionaire List in order from least to greatest:"
 @people = WorldsWealthiestPeople::Person.list
 @people.each.with_index(1) do |person, i| 
-  puts "#{i}. #{person.name_and_ranking} - #{person.description}"
+  puts "#{i}. #{person.name_and_ranking}"
   end 
+end 
+
+def list_descriptions
+puts ""
+puts "2019 Billionaire Descriptions"
+@people = WorldsWealthiestPeople::Person.list
+@people.map{|person| puts person.description}
 end 
 
 def menu
@@ -26,8 +34,10 @@ def menu
  
   if input.to_i > 0 
     the_person = @people[input.to_i-1]
-     puts "#{i}. #{the_person.name_and_ranking} - #{the_person.description}"
+     puts "#{i}. #{the_person.description}"
     elsif input == "list"
+    list_descriptions 
+    elsif input == "rankings"
     list_billionaires 
      else 
        puts ""
