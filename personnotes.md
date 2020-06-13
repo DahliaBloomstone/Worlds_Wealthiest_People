@@ -1,43 +1,50 @@
+#To Interact: ./bin/Worlds-Wealthiest-People
+
 class WorldsWealthiestPeople::Person 
- attr_accessor :name, :ranking, :description, :url
+ attr_accessor :name_and_ranking, :description
  
- def self.list 
-#  Scrape billionaire website and then return people based on that data 
-  self.scrape_people
+ individual instances of billionaire data with two properties: 1. name and ranking and 2. descriptions 
+ #Parentclass::ChildClass 
+ #with two attribute accesors, nake and ranking, and description, since those are the two pieces of data the user will be prompted to choose from
+ 
+ #I only used two 
+ 
+ def self.list #self keyword here refers to the Person class, calling on the instance of list (billionaire list)
+#Here we want to Scrape the billionaire website and then return people based on that data 
+  self.scrape_people #scrape people 
  end 
       
-def self.scrape_people    
-person_1 = self.new 
-person_1.name = "Laurene Powell Jobs"
-person_1.ranking = "50"
-person_1.description = "The first woman on our list is the creator of the Emerson Collective, and the widow of Steve Jobs. She also created the Lauren Powell Jobs trust, which is currently the largest individual shareholder in Disney. She has given millions to charity including a $50 million commitment to XQ: The Super School Project. As of 2018, her net worth stood somewhere in the region of $18.8 Billion."
-person_1.url = "https://vocal.media/geeks/top-50-billionaires-in-the-world-for-2019"
-
-person_2 = self.new 
-person_2.name = "Elon Musk"
-person_2.ranking = "49"
-person_2.description = "Working to revolutionize transportation both on Earth and in space, Elon Musk is the owner of car company Tesla Motors, and rocket company Space X. He grew up in South Africa, then immigrated to Canada at age 17, landing in the US as a transfer student at the University of Pennsylvania. As of 2018, his net worth stood somewhere in the region of $19.9 Billion."
-person_2.url = "https://vocal.media/geeks/top-50-billionaires-in-the-world-for-2019"
-
-[person_1, person_2]
-    end 
-
- end 
+def self.scrape_people  #giving this method 
+  people = []  #an empty array to put all of the billionaire data 
   
+  people << self.scrape_url #we are going to put all of the scraped data into the empty people array 
+    people  #call the people array 
+  end 
   
-  #end up with an array of people I just scraped 
-  
+  def self.scrape_url #method actually scrapes the url using nokogiri 
+    doc = Nokogiri::HTML(open("https://vocal.media/geeks/top-50-billionaires-in-the-world-for-2019")) #putting my URL into the nokogiri open uri method 
    
-  #go to website, find the people
-  #extract the properties
-  #instantiate a person 
+   #self.new is a method that instantiates a new part of the doc and grabs the instance variables of the article and saves them. Each time a new article instance is created, it is saved into the person array - an array that contains all the doc objects.
 
-def list_descriptions 
-  puts ""
-  puts "2019 Billionaire List descriptions:"
-  @people = WorldsWealthiestPeople::Person.list 
-  @people.each.with_index(1) do |person, i| 
-  puts "#{i}. #{the_person.descriptions}"
-end
+  #scraped the html data from the website 
+  #text.strip is used at the end of the Nokogiri method because .strip removes all whitespace
+  and .text removes the html and css part of the data 
+   person = self.new  
+   person.name_and_ranking = doc.search("h3.css-rv324f-Heading.em4arlq0").text.strip 
+   
+   person.description = doc.search("p.css-1oblyum-P.e1ccqnho0").text.strip 
+   person
+  end 
 end 
+  
+
+
+
+
+
+
+
+
+
+
 

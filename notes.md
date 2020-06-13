@@ -5,26 +5,18 @@ How to Build a CLI Gem
 3. Start with the entry point - the file run
 4. force that to build the CLI interface
 5. stub out the interface 
-6. start making things rela
+6. start making things 
 7. discover objects
 8. program 
+9. Fix gemspec 
+10. Make sure you find a website that is easy for scraping
+11. Alter bin file 
 
 - A command line interface that shows the top 50 wealthiest people in the world
 - user types Worlds-Wealthiest-People  (executable)
-- shows a list of wealthy people (name, rank, description)
-
-Example: Shows rank, name, description
-1. 50. Laurene Powell Jobs
-
-The first woman on our list is the creator of the Emerson Collective, and the widow of Steve Jobs.
-She also created the Lauren Powell Jobs trust, which is currently the largest individual shareholder in Disney.
-She has given millions to charity including a $50 million commitment to "XQ: The Super School Project.
-As of 2018, her net worth stood somewhere in the region of $18.8 Billion.
-
-Which billionaire do you want to learn more about? 
-
-
-Executable goes in the bin directory. The file they are running. 
+- shows a list of wealthy people with names and rankings
+- shows the wealthy people descriptions 
+- Asks the user which information they need for their project
 
 
 #WorldsWealthiestPeople::CLI.new.call 

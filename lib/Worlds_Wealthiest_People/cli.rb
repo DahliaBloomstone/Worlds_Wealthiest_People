@@ -1,4 +1,5 @@
-#To Play:  ./bin/Worlds-Wealthiest-People
+#To Interact:  ./bin/Worlds-Wealthiest-People
+
 class WorldsWealthiestPeople::CLI
   
   def call 

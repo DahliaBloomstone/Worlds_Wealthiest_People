@@ -1,4 +1,4 @@
-#./bin/Worlds-Wealthiest-People
+#To Interact: ./bin/Worlds-Wealthiest-People
 
 class WorldsWealthiestPeople::Person 
  attr_accessor :name_and_ranking, :description

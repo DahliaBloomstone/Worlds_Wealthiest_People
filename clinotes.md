@@ -1,146 +1,77 @@
-class WorldsWealthiestPeople::CLI
-  
-  def call 
-    puts "These are the World's Wealthiest People!"
-    list_billionaires
-    menu 
-    goodbye 
+#To Play:  ./bin/Worlds-Wealthiest-People
+class WorldsWealthiestPeople::CLI #I am creating a class, WWW, that is a parent::child syntax
+                                  #WWP::CLI just gives the WWP class access to all constants, instance methods, etc, without stating that a WWP is a type of cli. The :: syntax carries all public items over to the inheriting class or module.
+                                  #CLI controller 
+
+def call  #defining a method call that will puts the first message the user sees 
+puts "These are the World's Wealthiest People!"
+list_billionaires #method 1 
+list_descriptions #method 2
+menu              #method 3
+goodbye           #method 4
 end
 
-def list_billionaires 
-puts <<-DOC
-  1. 50. Laurene Powell Jobs
-The first woman on our list is the creator of the Emerson Collective, and the widow of Steve Jobs.
-She also created the Lauren Powell Jobs trust, which is currently the largest individual shareholder in Disney.
-She has given millions to charity including a $50 million commitment to "XQ: The Super School Project.
-As of 2018, her net worth stood somewhere in the region of $18.8 Billion.
-2. 49. Elon Musk
-Working to revolutionize transportation both on Earth and in space, Elon Musk is the owner of car company Tesla Motors, and rocket company Space X.
-He grew up in South Africa, then immigrated to Canada at age 17, landing in the US as a transfer student at the University of Pennsylvania.
-As of 2018, his net worth stood somewhere in the region of $19.9 Billion.
-DOC
-end 
-
-def menu 
-  puts "Enter the number of the billionaire you'd like more info on or type exit to enter or type list to see the full list of billionaires again or type exit:"
- input = nil
-  while input != "exit"
-  input = gets.strip.downcase
-  case input 
-  when "1"
-    puts "More info on billionaire 1..."
-  when "2"
-    puts "More info on billionaire 2..."
-      when "list"
-        list_billionaires
-      else 
-        puts "Not sure what you want, type list or exit"
-      end 
-    end
-  end 
-
-def goodbye 
-  puts "See you tomorrow for more information!"
-  end 
-end 
-
-
-
-
-
-
-class WorldsWealthiestPeople::CLI
-  
-  def call 
-    puts "These are the World's Wealthiest People!"
-    list_billionaires
-    menu 
-    goodbye 
-end
+#first method, list billionaires, added a space between the data and I am allowing the user to see the billionaire list from least to greatest. 
+#Instance variable @people = grabbing from the person class and creating the billionaire list 
 
 def list_billionaires 
-puts "2019 Billionaire List in order from least to greatest:"
-@people = WorldsWealthiestPeople::Person.list
+puts "" #Puts a space 
+puts "2019 Billionaire List in Order from Least to Greatest:"
+@people = WorldsWealthiestPeople::Person.list 
 @people.each.with_index(1) do |person, i| 
-  puts "#{i}. #{person.name_and_ranking} - #{person.description}"
-  end 
+puts "#{i}. #{person.name_and_ranking}"
+end 
 end 
 
-def menu
-   input = nil
-     while input != "exit"
-  puts "Continue to see the list of billionaires for 2019 with ranking, name, and description or type exit to enter or type list to see the full list of billionaires again or type exit:"
-  input = gets.strip.downcase
- 
-  if input.to_i > 0 
-    the_person = @people[input.to_i-1]
-     puts "#{i}. #{the_person.name_and_ranking} - #{the_person.description}"
-    elsif input == "list"
-    list_billionaires 
-     else 
-        puts "Not sure what you want, type list or exit"
-      end 
-    end
-  end 
-
-def goodbye 
-  puts "See you tomorrow to keep reading!"
-  end 
-end 
-
-
-TRIED: class WorldsWealthiestPeople::CLI
-  
-  def call 
-    puts "These are theWorld's Wealthiest People!"
-    list_billionaires
-    list_descriptions
-    menu 
-    goodbye 
-end
-
-def list_billionaires
+#this method does a similar thing as above, it calls the instance variable @people and grabs from the person class for the billionaire descriptions array 
+#.map iterates through each person and puts the persons description from the website and returns that entire array of data 
+#you call map with a block. I chose map and not each because map returns a new array with the transformed objects and each would not collect the results.
+def list_descriptions
 puts ""
-puts "2019 Billionaire List in order from least to greatest:"
+puts "2019 Billionaire Descriptions"
 @people = WorldsWealthiestPeople::Person.list
-@people.each.with_index(1) do |person, i| 
-  puts "#{i}. #{person.name_and_ranking}"
-  end 
+@people.map{|person| puts person.description}
 end 
 
-def list_descriptions 
-  puts ""
-  puts "2019 Billionaire List descriptions:"
-  @people = WorldsWealthiestPeople::Person.descriptions 
-  @people.each.with_index(1) do |person, i| 
-  @people.map{|person| puts person.descriptions}
-  puts "#{i}. #{the_person.descriptions}"
-  end
-end 
+ #the gets method is being called. the gets method captures the last thing the user typed into the          terminal. the return value for gets is the text typed into the terminal. 
+ #strip removes any whitespace
+#set the first value to an empty space, and start a while loop, if input does not equal exit then continue 
 
-  
 def menu
-   input = nil
-     while input != "exit"
-  puts ""
-  puts "Continue to see the list of billionaires for 2019 with ranking, name, and description or type exit to enter or type list to see the full list of billionaires again or type exit:"
-  input = gets.strip.downcase
+input = nil 
+while input != "exit"
+puts ""
+puts "Continue to see the list of billionaires for 2019 with ranking, name, and description or type exit to enter. Type list to read about the full descriptions of billionaires again, type rankings to see just the billionaires and their rankings, or type exit:"
+input = gets.strip.downcase  
  
-     if input.to_i > 0 
-    the_person = @people[input.to_i-1]
-   elsif input == "list"
-    list_billionaires 
-     elseif input == "descriptions"
-       list_descriptions
-     else 
-       puts ""
-        puts "Not sure what you want, type list or exit"
-      end 
-    end
-  end 
-
-def goodbye 
-  puts ""
-  puts "See you tomorrow to keep reading!"
-  end 
+ 
+ #continuing the loop, if it converts to an integer and it is greater than 0, it will treat it as an integer otherwise it will treat it as a string 
+ # @people[input.to_ ] return the array index of that person description
+ #the rest of this loop tells the program/cli that if the person types list, they will get back the list of the billionaire descriptions, and if the person types rankings, they will just get the billionaire names and rankings 
+ #at the end, if they type "children?" that is not data that this program gets, so it will give them another option.
+if input.to_i > 0 
+the_person = @people[input.to_i-1]
+puts "#{i}. #{the_person.description}" 
+elsif input == "list"
+list_descriptions 
+elsif input == "rankings"
+list_billionaires 
+else 
+puts ""
+puts "Not sure what you want, type list, rankings, or exit"
 end 
+end
+end 
+
+#final cli statement 
+def goodbye 
+puts ""
+puts "See you tomorrow to keep learning!"
+end 
+end 
+
+
+
+
+
+
