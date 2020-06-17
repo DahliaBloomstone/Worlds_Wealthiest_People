@@ -13,7 +13,7 @@ end
 def list_billionaires
 puts ""
 puts "2019 Billionaire List in Order from Least to Greatest:"
-@people = WorldsWealthiestPeople::Person.list
+@people = WorldsWealthiestPeople::Person.scrape_people
 @people.each.with_index(1) do |person, i| 
   puts "#{i}. #{person.name_and_ranking}"
   end 
@@ -33,7 +33,7 @@ def menu
   puts "Continue to see the list of billionaires for 2019 with ranking, name, and description or type exit to enter. Type list to read about the full descriptions of billionaires again, type rankings to see just the billionaires and their rankings, or type exit:"
   input = gets.strip.downcase
  
-  if input.to_i > 0 
+  if input.to_i > 0 && input.to_i <= @people.length
     the_person = @people[input.to_i-1]
      puts "#{i}. #{the_person.description}"
     elsif input == "list"

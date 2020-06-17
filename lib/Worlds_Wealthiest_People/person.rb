@@ -3,10 +3,12 @@
 class WorldsWealthiestPeople::Person 
  attr_accessor :name_and_ranking, :description
  
- def self.list 
+# @@all = []
+ 
+ #def self.list 
 #  Scrape billionaire website and then return people based on that data 
-  self.scrape_people
- end 
+ # self.scrape_people
+# end 
       
 def self.scrape_people  
   people = [] 
@@ -25,3 +27,7 @@ def self.scrape_people
   end 
 end 
   
+# move the scraper into its own class
+# return values / iterators 
+# live coding exercise 
+
