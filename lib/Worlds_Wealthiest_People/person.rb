@@ -5,15 +5,20 @@ class WorldsWealthiestPeople::Person
 
 # @@all = []
 
+def initialize(name_and_ranking, description)
+  @name_and_ranking = name_and_ranking
+  @description = description
+end
+
 def self.list
 #  Scrape billionaire website and then return people based on that data
   self.scrape_people
- end 
+ end
 
 def self.scrape_people
   people = []
 
-  people << self.scrape_url
+  people << WorldsWealthiestPeople::Scraper.scrape_url
     people
   end
 
