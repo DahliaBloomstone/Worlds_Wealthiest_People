@@ -3,8 +3,6 @@
 class WorldsWealthiestPeople::Person
  attr_accessor :name_and_ranking, :description
 
-# @@all = []
-
 def initialize(name_and_ranking, description)
   @name_and_ranking = name_and_ranking
   @description = description
@@ -31,7 +29,3 @@ def self.scrape_people
    person
   end
 end
-
-# move the scraper into its own class
-# return values / iterators
-# live coding exercise
