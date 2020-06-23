@@ -1,13 +1,13 @@
-#To Interact:  ./bin/Worlds-Wealthiest-People
+#To Interact: ./bin/Worlds-Wealthiest-People
 
 class WorldsWealthiestPeople::CLI
 
-  def call
-    puts "These are the World's Wealthiest People!"
-    list_billionaires
-    list_descriptions
-    menu
-    goodbye
+def call
+  puts "These are the World's Wealthiest People!"
+  list_billionaires
+  list_descriptions
+  menu
+  goodbye
 end
 
 def list_billionaires
