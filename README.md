@@ -3,6 +3,10 @@ This CLI will return to you a list of the 2019 World's Wealthiest People in Orde
 It will also give you a description of all of the World's Wealthiest People!
 Have fun learning!
 
+
+https://user-images.githubusercontent.com/63209579/107707162-742a8980-6c8f-11eb-87fa-214cd0782ba0.mov
+
+
 # WorldsWealthiestPeople::Cli
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/Worlds_Wealthiest_People/cli`. To experiment with that code, run './bin/Worlds-Wealthiest-People' for an interactive prompt.
