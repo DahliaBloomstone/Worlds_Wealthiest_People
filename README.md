@@ -4,7 +4,6 @@ It will also give you a description of all of the World's Wealthiest People!
 Have fun learning!
 
 
-https://user-images.githubusercontent.com/63209579/107707162-742a8980-6c8f-11eb-87fa-214cd0782ba0.mov
 
 
 # WorldsWealthiestPeople::Cli
