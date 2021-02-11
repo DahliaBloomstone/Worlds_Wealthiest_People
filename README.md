@@ -6,6 +6,11 @@ Have fun learning!
 
 
 
+
+<img width="1525" alt="Screen Shot 2021-02-11 at 5 35 51 PM" src="https://user-images.githubusercontent.com/63209579/107707301-a3d99180-6c8f-11eb-9f73-2b8c8b84bb9c.png">
+<img width="1363" alt="Screen Shot 2021-02-11 at 5 36 01 PM" src="https://user-images.githubusercontent.com/63209579/107707302-a3d99180-6c8f-11eb-974e-e5919296366e.png">
+
+
 # WorldsWealthiestPeople::Cli
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/Worlds_Wealthiest_People/cli`. To experiment with that code, run './bin/Worlds-Wealthiest-People' for an interactive prompt.
